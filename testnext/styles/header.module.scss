@@ -1,5 +1,37 @@
 .contain {
-    max-width: 100vw;
-    max-height: 100vh;
-    background: red;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+
+.containNav {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+
+    .boderTop {
+        max-width: 100vw;
+        height: 8px;
+        background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+        background-clip: border-box;
+        border-style: solid;
+    }
+
+    .menuContent {
+        max-width: 100vw;
+        height: calc(100% - 8px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .borderBottom {
+        max-width: 100vw;
+        height: 4px;
+        background: rgb(230, 230, 230);
+    }
 }
