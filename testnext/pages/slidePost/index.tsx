@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 
-const SlidePost = () => {
+const SlidePost: React.FC = () => {
   return <div>SlidePost</div>;
 };
 

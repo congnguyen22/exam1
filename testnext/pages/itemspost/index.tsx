@@ -1,7 +1,7 @@
 import { Box, Flex, Grid } from "@mantine/core";
 import React, { memo } from "react";
 
-const ItemsPost = () => {
+const ItemsPost: React.FC = () => {
   return (
     <Grid
       sx={{
