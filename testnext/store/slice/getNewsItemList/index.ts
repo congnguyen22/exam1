@@ -1,20 +1,22 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 import { createSlice } from "../../../utils/@reduxjs/toolkit";
 import { useInjectReducer } from "../../../utils/redux-injectors";
-import { DailyCardState } from "./type";
+import { ListMenu } from "./type";
 
-export const initialState: DailyCardState = {
-  isFreeCard: true,
-  getIdCard: 10,
-  Filter: false,
+export const initialState: ListMenu = {
+  data: [],
+  check: {
+    isLoad: false,
+  },
 };
 
 const slice = createSlice({
   name: "stateCard",
   initialState,
   reducers: {
-    SetNumberWhenUseCardFree: (state: DailyCardState, action) => {
-      console.log(">3");
+    RequestGetNewsList: (state: ListMenu, action) => {},
+    ResponseGetNewsList: (state: ListMenu, actions) => {
+      state.data = actions.payload;
     },
   },
 });

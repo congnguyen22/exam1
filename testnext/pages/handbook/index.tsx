@@ -1,10 +1,10 @@
 import React, { memo } from "react";
 import Home from "..";
 
-const Sports = () => {
+const Sports: React.FC = () => {
   return (
     <Home>
-      <div>Sports</div>
+      <div>Cẩm nang</div>
     </Home>
   );
 };

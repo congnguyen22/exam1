@@ -7,15 +7,9 @@ import {
 } from "../../store/slice/getNewsItemList";
 
 const News = () => {
-  const { DailyCardRDucer } = DailyCardReducer();
-  const dispatch = useDispatch();
-  const fca = () => {
-    console.log("hi");
-    dispatch(DailyCardRDucer.SetNumberWhenUseCardFree(false));
-  };
   return (
     <Home>
-      <div onClick={() => fca()}>news</div>
+      <div>Tin tức giáo dục</div>
     </Home>
   );
 };

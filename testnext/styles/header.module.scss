@@ -1,5 +1,5 @@
 .contain {
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,13 +7,13 @@
 }
 
 .containNav {
-    width: 100vw;
+    width: 100%;
     height: 10vh;
     display: flex;
     flex-direction: column;
 
     .boderTop {
-        max-width: 100vw;
+        max-width: 100%;
         height: 8px;
         background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
         background-clip: border-box;
@@ -21,7 +21,7 @@
     }
 
     .menuContent {
-        max-width: 100vw;
+        max-width: 100%;
         height: calc(100% - 8px);
         display: flex;
         justify-content: center;
@@ -30,7 +30,7 @@
     }
 
     .borderBottom {
-        max-width: 100vw;
+        max-width: 100%;
         height: 4px;
         background: rgb(230, 230, 230);
     }

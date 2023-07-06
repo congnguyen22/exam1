@@ -1,13 +1,16 @@
-import axios from 'axios';
-import { BaseResponse } from './response';
+import axios from "axios";
+import { BaseResponse } from "./response";
 
-const baseDomain = 'https://ttvnapi.com';
-// const baseDomain = "http://127.0.0.1:8080";
+const baseDomain = "http://api-tintuc.enetviet.com";
 
-export const apiGet = async (url: string, header: any) => {
+export const apiGet = async (url: string, headers: any) => {
   try {
     url = baseDomain + url;
-    const { data } = await axios.get(url, { headers: header });
+    const { data } = await axios.get(url, {
+      headers: {
+        Authorization: headers,
+      },
+    });
     return data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
@@ -16,7 +19,7 @@ export const apiGet = async (url: string, header: any) => {
     const response: BaseResponse = {
       data: undefined,
       error: 1,
-      message: 'system_error',
+      message: "system_error",
     };
     return response;
   }
@@ -36,7 +39,7 @@ export const apiPost = async (url: string, payload: any, header: any) => {
     const response: BaseResponse = {
       data: undefined,
       error: 1,
-      message: 'system_error',
+      message: "system_error",
     };
     return response;
   }

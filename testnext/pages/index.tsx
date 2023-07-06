@@ -4,8 +4,10 @@ import styles from "../styles/header.module.scss";
 import NavHeader from "./navmain/NavHeader";
 import { Children } from "react";
 import CarosuelSlide from "./carosuel";
-import { Box } from "@mantine/core";
+import { Box, LoadingOverlay } from "@mantine/core";
 import Itemspost from "./itemspost";
+import { useSelector } from "react-redux";
+import { RegisterLoading } from "../store/slice/getNewsItemList/selector";
 
 export default function Home({ children }) {
   return (
@@ -34,7 +36,7 @@ export default function Home({ children }) {
           sx={{
             maxWidth: "90vw",
             width: "100%",
-            height: "100vh",
+            height: "100%",
             marginTop: "40px",
           }}
         >

@@ -1,11 +1,15 @@
 import "../styles/globals.css";
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import { configureAppStore } from "../store/configureStore";
+import { Box, LoadingOverlay, MantineProvider } from "@mantine/core";
+import { RegisterLoading } from "../store/slice/getNewsItemList/selector";
 const store = configureAppStore();
 function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
-      <Component {...pageProps} />
+      <MantineProvider theme={{ loader: "bars" }}>
+        <Component {...pageProps} />
+      </MantineProvider>
     </Provider>
   );
 }
