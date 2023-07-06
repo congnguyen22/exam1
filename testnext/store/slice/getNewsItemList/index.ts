@@ -5,7 +5,7 @@ import { DailyCardState } from "./type";
 
 export const initialState: DailyCardState = {
   isFreeCard: true,
-  getIdCard: 0,
+  getIdCard: 10,
   Filter: false,
 };
 
