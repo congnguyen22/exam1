@@ -5,6 +5,9 @@ import { ListMenuNew } from "./type";
 
 export const initialState: ListMenuNew = {
   dataNew: [],
+  dataWhenScroll: [],
+  infoDatanew: [],
+  totaItems: 0,
   check: {
     isLoad: false,
   },
@@ -20,6 +23,23 @@ const slice = createSlice({
     ResponseGetNewsListNews: (state: ListMenuNew, actions) => {
       state.check.isLoad = false;
       state.dataNew = actions.payload;
+    },
+    RequestGetInfoListNews: (state: ListMenuNew, action) => {
+      state.check.isLoad = true;
+      console.log(action.payload, "thí í data in action");
+    },
+    ResponseGetInfoListNews: (state: ListMenuNew, actions) => {
+      state.check.isLoad = false;
+      state.infoDatanew = actions.payload;
+    },
+    RequestGetScrollListNews: (state: ListMenuNew, action) => {
+      state.check.isLoad = true;
+    },
+    ResponseGetScrollListNews: (state: ListMenuNew, actions) => {
+      state.check.isLoad = false;
+      state.dataNew = actions.payload;
+      state.dataWhenScroll = actions.payload;
+      state.totaItems = actions.payload.length;
     },
   },
 });

@@ -3,9 +3,9 @@ import { call, put, takeLatest } from "redux-saga/effects";
 import { apiGet, apiPost } from "../../../utils/http/request";
 import { AxiosResponse } from "axios";
 import { DailyCardRDucer } from ".";
-import { ListMenu } from "./type";
+import { ISagaType1 } from "./type";
 
-function* fetchGetNewsList(action: PayloadAction<ListMenu>) {
+function* fetchGetNewsList(action: PayloadAction<ISagaType1>) {
   try {
     const { limit, loai_nguoi_dung, skip } = action?.payload;
     const header = "3EC79C17-63ED-4166-BD58-04397B94312C";
@@ -13,7 +13,7 @@ function* fetchGetNewsList(action: PayloadAction<ListMenu>) {
     const setLND = loai_nguoi_dung ? `loai_nguoi_dung=${loai_nguoi_dung}` : "";
     const setSkip = skip == 0 ? `&skip=${skip}` : "";
     const url = `/DanhMucTinTuc/GetDanhSachDanhMucTinTuc?${setLND}${setSkip}${setLimit}`;
-    const res: AxiosResponse<ListMenu> = yield call(apiGet, url, header);
+    const res: AxiosResponse<ISagaType1> = yield call(apiGet, url, header);
     if (res.status == 1) {
       yield put(DailyCardRDucer.ResponseGetNewsList(res.data));
     }

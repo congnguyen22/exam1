@@ -13,3 +13,7 @@ export const RegisterLoadingNew = createSelector(
   [SelectorsListMenuNew],
   (itemsNews) => itemsNews?.check
 );
+export const RegisterScrollDataNew = createSelector(
+  [SelectorsListMenuNew],
+  (itemsNews) => itemsNews?.dataWhenScroll
+);
