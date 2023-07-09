@@ -7,7 +7,7 @@ import {
   DailyCardReducerNews,
   searchReducerNews,
 } from ".";
-import { IroleSaga, isInfoDataNew } from "./type";
+import { IroleSaga } from "./type";
 
 function* fetchGetInfoData(action) {
   try {

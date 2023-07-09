@@ -20,7 +20,7 @@ const InfoCompo: React.FC = () => {
     const payload: IsToken = { id: `${id}` };
     dispatch(DailyCardRDucerNews.RequestGetInfoListNews(payload));
   }, []);
-  const htmlData = data2.noiDung;
+  const htmlData = data2?.noiDung;
   return (
     <Stack>
       <Center
