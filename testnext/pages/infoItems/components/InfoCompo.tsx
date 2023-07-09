@@ -27,7 +27,7 @@ const InfoCompo: React.FC = () => {
         sx={{
           maxWidth: "80vw",
           width: "100%",
-          marginTop: "40px",
+          marginTop: "41px",
           flexDirection: "column",
           justifyContent: "flex-start",
         }}
