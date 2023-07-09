@@ -10,9 +10,8 @@ import { useLocalStorage } from "@mantine/hooks";
 import { useDispatch, useSelector } from "react-redux";
 import { retry } from "redux-saga/effects";
 import { DailyCardReducerNews } from "../../store/slice/getItemsNews";
-import { RegisterListNews } from "../../store/slice/getItemsNews/selector";
+import { RegisterListNews2 } from "../../store/slice/getItemsNews/selector";
 import { useRouter } from "next/router";
-// import { RegisterListNews } from "../../store/slice/getItemsNews/selector";
 export interface ISlideHead {
   id: string;
   tenDanhMuc: string;
@@ -28,7 +27,7 @@ const CarosuelSlide: React.FC = ({
   sngayTao,
 }: ISlideHead) => {
   const { classes: c } = makeStyle();
-  const data = useSelector(RegisterListNews);
+  const data = useSelector(RegisterListNews2);
   const { DailyCardRDucerNews } = DailyCardReducerNews();
   const dispatch = useDispatch();
   const routes = useRouter();
@@ -49,18 +48,12 @@ const CarosuelSlide: React.FC = ({
 
   // chuyển qua trang chi tiết bài viết khi nhấn vào từng items một
 
-  const [colorScheme, setColorScheme] = useLocalStorage({
-    key: "token",
-    defaultValue: "5m0iC1KHy06chLfft9Mb2A",
-  });
-
   const handleGetIdNews = (v) => {
-    const state = { data: `${data[v]?.id}` };
+    const state = { data: `${data[v - 2]?.id}` };
     routes.push({
       pathname: "/infoItems",
       query: state,
     });
-    setColorScheme({ key: "token", defaultValue: `${data[v]?.id}` });
   };
 
   const handleItemsNew = () => {
@@ -69,9 +62,9 @@ const CarosuelSlide: React.FC = ({
       pathname: "/infoItems",
       query: state,
     });
-    setColorScheme({ key: "token", defaultValue: `${data[0].id}` });
   };
 
+  console.log(data, "thí í data");
   return (
     <Flex className={c.boxSlide}>
       <Flex className={c.slide1}>

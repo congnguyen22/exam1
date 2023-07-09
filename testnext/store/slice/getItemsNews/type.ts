@@ -12,7 +12,6 @@ export interface isInfoDataNew {
   tieuDe: string;
   tomTat: string;
   noiDung: string;
-  token?: string;
   anhDaiDien: string;
   ngayTao: string;
   tag: string;

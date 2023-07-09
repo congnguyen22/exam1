@@ -48,7 +48,7 @@ const NavHeader: React.FC = ({ id, label, link }: INavLabel) => {
 const makeStyles = createStyles((theme) => ({
   items: {
     height: "100%",
-    margin: "0px 10px",
+    margin: "0px 10px !important",
     padding: "0px 10px",
     display: "flex",
     justifyContent: "center",
@@ -63,7 +63,15 @@ const makeStyles = createStyles((theme) => ({
   laberNav: {
     fontWeight: 800,
     fontSize: "19px",
+    margin: "0px 10px !important",
+    padding: "0px 10px",
     color: "rgb(88, 88, 88)",
+
+    ":hover": {
+      color: "rgb(88, 88, 88)",
+      borderBottom: "1px solid rgb(239, 79, 79)",
+      transform: "scale(1.01)",
+    },
   },
 }));
 

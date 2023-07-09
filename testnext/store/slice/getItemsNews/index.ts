@@ -2,6 +2,7 @@ import { PayloadAction } from "@reduxjs/toolkit";
 import { createSlice } from "../../../utils/@reduxjs/toolkit";
 import { useInjectReducer } from "../../../utils/redux-injectors";
 import { ListMenuNew } from "./type";
+import { IsToken } from "../../../pages/infoItems/components/InfoCompo";
 
 export const initialState: ListMenuNew = {
   dataNew: [],
@@ -26,7 +27,6 @@ const slice = createSlice({
     },
     RequestGetInfoListNews: (state: ListMenuNew, action) => {
       state.check.isLoad = true;
-      console.log(action.payload, "thí í data in action");
     },
     ResponseGetInfoListNews: (state: ListMenuNew, actions) => {
       state.check.isLoad = false;

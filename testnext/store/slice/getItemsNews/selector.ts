@@ -7,6 +7,10 @@ const SelectorsListMenuNew = (state: RootState) =>
 
 export const RegisterListNews = createSelector(
   [SelectorsListMenuNew],
+  (itemsNews) => itemsNews?.infoDatanew
+);
+export const RegisterListNews2 = createSelector(
+  [SelectorsListMenuNew],
   (itemsNews) => itemsNews?.dataNew
 );
 export const RegisterLoadingNew = createSelector(

@@ -9,19 +9,20 @@ import {
 } from ".";
 import { IroleSaga, isInfoDataNew } from "./type";
 
-function* fetchGetInfoData(action: PayloadAction<IroleSaga>) {
+function* fetchGetInfoData(action) {
   try {
     const istoken = action?.payload ? `id=${action?.payload}` : "";
-
-    console.log(action, "thí í action in saga");
     const header = "3EC79C17-63ED-4166-BD58-04397B94312C";
+    const id = action.payload.id
+      ? `id=${action.payload.id}`
+      : "5m0iC1KHy06chLfft9Mb2A";
 
-    const url = `/TinTucHeThong/GetChiTietTinTuc?id=5m0iC1KHy06chLfft9Mb2A`;
+    const url = `/TinTucHeThong/GetChiTietTinTuc?${id}`;
 
     const res: AxiosResponse<IroleSaga> = yield call(apiGet, url, header);
-    console.log(res);
+
     if (res.status == 1) {
-      yield put(DailyCardRDucerNews.ResponseGetScrollListNews(res.data));
+      yield put(DailyCardRDucerNews.ResponseGetInfoListNews(res.data));
     }
   } catch (error) {}
 }

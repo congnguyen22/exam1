@@ -22,7 +22,6 @@ export interface IRoleFetch {
 
 const ItemsPost: React.FC = () => {
   const data = useSelector(RegisterScrollDataNew);
-  // const dataLength = useSelector(RegisterListMenu);
   const [hasmore, setHasmore] = useState<boolean>(true);
   const [NumberItems, setNumberItems] = useState(8);
   const dispatch = useDispatch();
@@ -67,7 +66,7 @@ const ItemsPost: React.FC = () => {
   }, []);
 
   const handleGetIdNews = (i) => {
-    const state = { data: `${data[i].id}` };
+    const state = { data: `${data[i + 4].id}` };
     routes.push({
       pathname: "/infoItems",
       query: state,
