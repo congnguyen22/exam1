@@ -1,6 +1,9 @@
 import { Box, Center, Flex, Stack, Text } from "@mantine/core";
 import React, { memo, useLayoutEffect } from "react";
-import { RegisterListNews } from "../../../store/slice/getItemsNews/selector";
+import {
+  RegisterListNews,
+  RegisterListNews2,
+} from "../../../store/slice/getItemsNews/selector";
 import { useDispatch, useSelector } from "react-redux";
 import { DailyCardReducerNews } from "../../../store/slice/getItemsNews";
 import { useRouter } from "next/router";
@@ -20,7 +23,7 @@ const InfoCompo: React.FC = () => {
     const payload: IsToken = { id: `${id}` };
     dispatch(DailyCardRDucerNews.RequestGetInfoListNews(payload));
   }, []);
-  const htmlData = data2?.noiDung;
+  const htmlData: any = data2?.noiDung;
   return (
     <Stack>
       <Center
@@ -77,7 +80,7 @@ const InfoCompo: React.FC = () => {
             background: `url(${data2.anhDaiDien})`,
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
-            backgroundSize: "100% 100%",
+            backgroundSize: "contain",
           }}
         ></Box>
       </Center>
@@ -85,4 +88,4 @@ const InfoCompo: React.FC = () => {
   );
 };
 
-export default InfoCompo;
+export default memo(InfoCompo);
