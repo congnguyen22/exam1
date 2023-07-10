@@ -64,7 +64,6 @@ const CarosuelSlide: React.FC = ({
     });
   };
 
-  console.log(data, "thí í data");
   return (
     <Flex className={c.boxSlide}>
       <Flex className={c.slide1}>

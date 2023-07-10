@@ -11,7 +11,7 @@ export interface isdataNew {
 export interface isInfoDataNew {
   tieuDe: string;
   tomTat: string;
-  noiDung: string;
+  noiDung: any;
   anhDaiDien: string;
   ngayTao: string;
   tag: string;
@@ -23,7 +23,7 @@ export interface isInfoDataNew {
 export interface ListMenuNew {
   dataNew: isdataNew[];
   dataWhenScroll: isdataNew[];
-  infoDatanew: isInfoDataNew[];
+  infoDatanew: any;
   totaItems: Number;
   check: {
     isLoad: boolean;

@@ -23,7 +23,7 @@ const InfoCompo: React.FC = () => {
     const payload: IsToken = { id: `${id}` };
     dispatch(DailyCardRDucerNews.RequestGetInfoListNews(payload));
   }, []);
-  const htmlData: any = data2?.noiDung;
+  console.log(data2, "this is data");
   return (
     <Stack>
       <Center
@@ -68,7 +68,7 @@ const InfoCompo: React.FC = () => {
               justifyContent: "center",
               alignItems: "flex-start",
             }}
-            dangerouslySetInnerHTML={{ __html: htmlData }}
+            dangerouslySetInnerHTML={{ __html: data2.noiDung }}
           />
         </Text>
 
